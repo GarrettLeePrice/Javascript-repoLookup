@@ -1,16 +1,25 @@
 ol {
   list-style: none;
 }
+
 .form-group {
   margin-top: 100px;
 }
+#flex1 h1 {
+ color: #333;
+}
+
+#flex2 h2 {
+color: #333;
+}
+
 #flexbox {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
   background: #333;
-  margin: 0 auto;
+  // margin: 0 auto;
   padding: 1px;
 
 }
@@ -33,17 +42,13 @@ ol {
   background: #d9d9d9;
   text-align: center;
   font-size: 18pt;
-  height: 300px;
-  align-items: center;
-  justify-content: center;
-
-
+  height: 900px;
 }
-
+//
 #flex3 {
   flex: auto;
   min-width: 200px;
-  background: #333;
+  background: #d9d9d9;
   text-align: center;
   font-size: 18pt;
   height: 900px;

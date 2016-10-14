@@ -1,6 +1,6 @@
 var apiKey = require('./../.env').apiKey;
 
-function repoLookup() {
+var repoLookup = function() {
 
 };
 
@@ -8,7 +8,7 @@ function repoLookup() {
 
 repoLookup.prototype.getRepos = function(user){
   $.get('https://api.github.com/users/garrettleeprice?access_token=' + apiKey).then(function(response){
-    $(".repoResults ol").append("<li>" + response + "</li>");
+    $(".repoResults ol").append("<li>" + user + "</li>");
 
     console.log(response);
   }).fail(function(error){
