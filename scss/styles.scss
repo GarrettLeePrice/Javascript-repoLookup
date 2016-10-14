@@ -1,0 +1,31 @@
+ol {
+  list-style: none;
+}
+
+#flexbox {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  background: #333;
+  margin: 0 auto;
+  padding: 1px;
+}
+
+#flex2 {
+  flex: auto;
+  min-width: 200px;
+  background: red;
+  text-align: center;
+  font-size: 18pt;
+  height: 300px;
+}
+
+#flex3 {
+  flex: auto;
+  min-width: 200px;
+  background: #d9d9d9;
+  text-align: center;
+  font-size: 18pt;
+  height: 900px;
+}
