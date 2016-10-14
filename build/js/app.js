@@ -4,14 +4,16 @@ exports.apiKey = "eb8972cd5051a92a3697aac981214ecf4cfe27b7";
 },{}],2:[function(require,module,exports){
 var apiKey = require('./../.env').apiKey;
 
-var repoLookup = function() {
+function repoLookup() {
 
 };
 
 
 
-repoLookup.prototype.getRepos = function(){
+repoLookup.prototype.getRepos = function(user){
   $.get('https://api.github.com/users/garrettleeprice?access_token=' + apiKey).then(function(response){
+    $(".repoResults ol").append("<li>" + response + "</li>");
+
     console.log(response);
   }).fail(function(error){
     console.log(error.responseJSON.message);
@@ -27,12 +29,12 @@ var repoLookup = require('./../js/repoLookup.js').repoLookupModule;
 
 
 $(document).ready(function(){
-  var newLookup = new repoLookup();
+  var fuck = new repoLookup();
 
   $("#searchName").submit(function(event) {
     event.preventDefault();
-    var lookup = $("#userName").val();
-    var currentRepo = new repoLookup(lookup)
+    var user = $("#userName").val();
+    var currentRepo = new repoLookup(user);
     currentRepo.getRepos();
 
   });
