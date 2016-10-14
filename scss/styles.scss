@@ -1,7 +1,9 @@
 ol {
   list-style: none;
 }
-
+.form-group {
+  margin-top: 100px;
+}
 #flexbox {
   display: flex;
   flex-direction: column;
@@ -10,6 +12,7 @@ ol {
   background: #333;
   margin: 0 auto;
   padding: 1px;
+
 }
 
 #flex1 {
@@ -31,6 +34,10 @@ ol {
   text-align: center;
   font-size: 18pt;
   height: 300px;
+  align-items: center;
+  justify-content: center;
+
+
 }
 
 #flex3 {
