@@ -12,10 +12,22 @@ ol {
   padding: 1px;
 }
 
-#flex2 {
+#flex1 {
   flex: auto;
   min-width: 200px;
   background: red;
+  text-align: center;
+  font-size: 18pt;
+  height: 600px;
+}
+
+
+
+
+#flex2 {
+  flex: auto;
+  min-width: 200px;
+  background: #d9d9d9;
   text-align: center;
   font-size: 18pt;
   height: 300px;
@@ -24,7 +36,7 @@ ol {
 #flex3 {
   flex: auto;
   min-width: 200px;
-  background: #d9d9d9;
+  background: #333;
   text-align: center;
   font-size: 18pt;
   height: 900px;
