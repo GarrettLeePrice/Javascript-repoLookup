@@ -1,20 +1,38 @@
 var apiKey = require('./../.env').apiKey;
 
-var repoLookup = function() {
+function Lookup (username) {
+  this.username = username.toString();
 
-};
+}
 
 
-
-repoLookup.prototype.getRepos = function(user){
-  $.get('https://api.github.com/users/garrettleeprice?access_token=' + apiKey).then(function(response){
-    $(".repoResults ol").append("<li>" + user + "</li>");
-
+Lookup.prototype.getRepos = function(username, displayFunction) {
+  $.get('https://api.github.com/users/' + username + '/repos?access_token=' + apiKey).then(function(response) {
+    displayFunction(response);
     console.log(response);
-  }).fail(function(error){
+    }).fail(function(error) {
     console.log(error.responseJSON.message);
   });
 };
 
 
-exports.repoLookupModule = repoLookup;
+
+
+
+
+
+// Lookup.prototype.getUser = function(user, displayUser) {
+//   $.get('https://api.github.com/users/' + user + '?access_token=' + apiKey).then(function(response) {
+//     console.log(response);
+//     displayUser(user, response);
+//   }).fail(function(error) {
+//     console.log(error.responseJSON.message);
+//   });
+// };
+
+
+
+
+
+
+exports.LookupModule = Lookup;
