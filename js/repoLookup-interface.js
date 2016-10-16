@@ -19,6 +19,7 @@ $(document).ready(function() {
   $("#submitName").click(function(){
     // event.preventDefault();
     var username = $("#userName").val();
+    $('.userName').text(username + "'s account");
     var newLookup = new Lookup(username);
 
     newLookup.getRepos(newLookup.username, showResults);
