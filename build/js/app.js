@@ -5,34 +5,34 @@ exports.apiKey = "eb8972cd5051a92a3697aac981214ecf4cfe27b7";
 var apiKey = require('./../.env').apiKey;
 
 function Lookup(username) {
-	this.username = username.toString();
+  this.username = username.toString();
 }
 Lookup.prototype.getRepos = function(username, displayFunction) {
-	$.get('https://api.github.com/users/' + username + '/repos?access_token=' +
-		apiKey).then(function(response) {
-		displayFunction(response);
-		console.log(response);
-	}).fail(function(error) {
-		console.log(error.responseJSON.message);
-	});
+  $.get('https://api.github.com/users/' + username + '/repos?access_token=' +
+    apiKey).then(function(response) {
+    displayFunction(response);
+    console.log(response);
+  }).fail(function(error) {
+    console.log(error.responseJSON.message);
+  });
 };
 exports.LookupModule = Lookup;
 
 },{"./../.env":1}],3:[function(require,module,exports){
 var Lookup = require('./../js/repoLookup.js').LookupModule;
 var showResults = function(userData) {
-	userData.forEach(function(data) {
-		$('.repoResults ol').append("<li>" + data.name + "</li>");
-	});
+  userData.forEach(function(data) {
+    $('.repoResults ol').append("<li>" + data.name + "</li>");
+  });
 };
 $(document).ready(function() {
-	$("#submitName").click(function() {
-		var username = $("#userName").val();
-		$('.userName').text("below are the repositories in " + username +
-			"'s account - ");
-		var newLookup = new Lookup(username);
-		newLookup.getRepos(newLookup.username, showResults);
-	});
+  $("#submitName").click(function() {
+    var username = $("#userName").val();
+    $('.userName').text("below are the repositories in " + username +
+      "'s account - ");
+    var newLookup = new Lookup(username);
+    newLookup.getRepos(newLookup.username, showResults);
+  });
 });
 
 },{"./../js/repoLookup.js":2}]},{},[3]);
