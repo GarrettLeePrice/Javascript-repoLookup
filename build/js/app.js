@@ -27,6 +27,7 @@ var showResults = function(userData) {
 };
 $(document).ready(function() {
   $("#submitName").click(function() {
+    $(".repoResults ol").empty();
     var username = $("#userName").val();
     $('.userName').text("below are the repositories in " + username +
       "'s account - ");
