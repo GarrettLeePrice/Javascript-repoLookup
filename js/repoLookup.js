@@ -9,7 +9,7 @@ Lookup.prototype.getRepos = function(username, displayFunction) {
     displayFunction(response);
     console.log(response);
   }).fail(function(error) {
-    console.log(error.responseJSON.message);
+    $('.repoResults ol').append("USER NOT FOUND");
   });
 };
 exports.LookupModule = Lookup;
